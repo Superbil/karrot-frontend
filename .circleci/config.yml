@@ -367,48 +367,24 @@ workflows:
       - test:
           requires:
             - install-dependencies
-          filters:
-            branches:
-              only:
-                - master
       - lint:
           requires:
             - install-dependencies
-          filters:
-            branches:
-              only:
-                - master
       - build-dev:
           requires:
             - install-dependencies
-          filters:
-            branches:
-              only:
-                - master
       - build-storybook:
           requires:
             - install-dependencies
-          filters:
-            branches:
-              only:
-                - master
       - build-docs:
           requires:
             - install-dependencies
-          filters:
-            branches:
-              only:
-                - master
       - build-cordova-dev:
           requires:
             - install-dependencies
       - build-android-dev:
           requires:
             - build-cordova-dev
-          filters:
-            branches:
-              only:
-                - master
       - build-ios-dev:
           requires:
             - build-cordova-dev
